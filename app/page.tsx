@@ -1,5 +1,13 @@
-import { ComponentExample } from "@/components/component-example";
+import AuthLayout from '@/modules/auth/components/AuthLayout'
+import LoginForm from '@/modules/auth/components/LoginForm'
+import React from 'react'
 
-export default function Page() {
-return <ComponentExample />;
+const page = () => {
+  return (
+    <AuthLayout>
+      <LoginForm />
+    </AuthLayout>
+  )
 }
+
+export default page
