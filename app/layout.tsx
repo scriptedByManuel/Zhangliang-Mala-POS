@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Figtree } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Zhangliang Mala POS",
-  description: "Created by MMS IT",
+  description: "Created by MMS Connection",
   icons: {
     icon: [
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
