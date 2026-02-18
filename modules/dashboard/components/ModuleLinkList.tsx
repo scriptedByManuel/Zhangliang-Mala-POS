@@ -39,7 +39,7 @@ function ModuleLinkList() {
         {
           icon: <User />,
           title: "Profile",
-          href: "/dashboard/profile",
+          href: "/dashboard/profile-information",
         },
       ],
     },
