@@ -29,7 +29,7 @@ function ModuleLinkList() {
         {
           icon: <Users />,
           title: "Customer",
-          href: "/dashboard/customer",
+          href: "/dashboard/customers",
         },
       ],
     },
