@@ -19,7 +19,7 @@ function ModuleLinkList() {
         {
           icon: <ChartBarStacked />,
           title: "Category",
-          href: "/dashboard/category",
+          href: "/dashboard/categories",
         },
         {
           icon: <Menu />,
