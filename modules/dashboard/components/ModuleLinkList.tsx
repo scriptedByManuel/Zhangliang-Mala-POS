@@ -19,7 +19,7 @@ function ModuleLinkList() {
         {
           icon: <ChartBarStacked />,
           title: "Category",
-          href: "/dashboard/category",
+          href: "/dashboard/categories",
         },
         {
           icon: <Menu />,
@@ -29,7 +29,7 @@ function ModuleLinkList() {
         {
           icon: <Users />,
           title: "Customer",
-          href: "/dashboard/customer",
+          href: "/dashboard/customers",
         },
       ],
     },
