@@ -32,3 +32,14 @@ export function updateCategory(
     body: JSON.stringify(payload),
   });
 }
+
+export function deleteCategory(id: number): Promise<Response> {
+  return fetch(`${categoryApiUrl}/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${getCookie("token")}`,
+    },
+  });
+}
