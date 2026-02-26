@@ -1,6 +1,7 @@
 import { PhotoUpdateFormValues } from "@/modules/profile-information/components/edit-profile/PhotoUpdateForm";
 import {
   ChangePasswordFormValues,
+  UserEditFormValues,
 } from "@/types/UserTypes";
 import { getCookie } from "react-use-cookie";
 
@@ -18,7 +19,7 @@ export function logout(): Promise<Response> {
 }
 
 export function updateProfile(
-  payload: PhotoUpdateFormValues,
+  payload: UserEditFormValues,
 ): Promise<Response> {
   return fetch(`${profileApiUrl}/change-name`, {
     method: "PATCH",
