@@ -21,6 +21,7 @@ export const profileEditFormSchema = z.object({
   confirm_check: z.boolean().refine((val) => val === true, {
     message: "You must confirm before edit profile",
   }),
+  
 });
 
 function EditProfileSection() {
