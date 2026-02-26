@@ -1,13 +1,13 @@
-import CategoryListSection from "@/modules/category/components/list/CategoryListSection"
-import Header from "@/modules/dashboard/components/Header"
+import CategoryListSection from "@/modules/category/components/list/CategoryListSection";
+import Header from "@/modules/dashboard/components/Header";
 
 const page = () => {
   return (
     <>
-        <Header currentPage="Category"  />
-        <CategoryListSection />
+      <Header currentPage="Category" />
+      <CategoryListSection />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

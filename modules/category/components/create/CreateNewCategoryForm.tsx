@@ -24,6 +24,7 @@ import useCategoryCreate from "../../hooks/useCategoryCreate";
 
 const CreateNewCategoryForm = () => {
 
+  const router = useRouter();
   const { control, handleSubmit, reset, formState: { isSubmitting }, onSubmit } = useCategoryCreate();
 
   return (
@@ -83,7 +84,7 @@ const CreateNewCategoryForm = () => {
           <Button
             type="button"
             variant="outline"
-            onClick={() => reset()}
+            onClick={() => router.push("/dashboard/categories")}
             disabled={isSubmitting}
           >
             Cancel
