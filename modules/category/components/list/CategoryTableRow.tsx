@@ -19,16 +19,16 @@ function CategoryTableRow({
       <TableCell>{id}</TableCell>
       <TableCell>{title}</TableCell>
       <TableCell>
-        <p className=" text-muted-foreground flex items-center gap-1">
-          {" "}
+        <p>{user.name}</p>
+
+        <p
+          className=" text-muted-foreground flex items-center gap-1"
+          title={dayjs(created_at).format("h:mm A")}
+        >
           {dayjs(created_at).format("D MMM YYYY")}
         </p>
-        <p className=" text-muted-foreground flex items-center gap-1">
-          <AlarmClock size={10} />
-          {dayjs(created_at).format("h:mm A")}
-        </p>
       </TableCell>
-      <TableCell>{user.name}</TableCell>
+
       <TableCell>
         <ButtonGroup className=" flex justify-end w-full">
           <CategoryDeleteBtn id={id} />

@@ -36,8 +36,7 @@ function CategoryTable() {
           <TableRow>
             <TableHead>#</TableHead>
             <TableHead>Category Name</TableHead>
-            <TableHead>Created At</TableHead>
-            <TableHead>Created By</TableHead>
+            <TableHead>Created</TableHead>
             <TableHead className=" text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>

@@ -23,14 +23,9 @@ function CategoryTableLoader() {
             <Skeleton className="h-4 w-40" />
           </TableCell>
 
-          {/* Created At */}
+          {/* Created */}
           <TableCell>
             <Skeleton className="h-4 w-32" />
-          </TableCell>
-
-          {/* Created By */}
-          <TableCell>
-            <Skeleton className="h-4 w-24" />
           </TableCell>
 
           {/* Actions */}
