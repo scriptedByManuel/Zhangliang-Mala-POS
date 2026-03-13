@@ -14,6 +14,7 @@ function CustomerListSection() {
         <CustomerTable />
       </Suspense>
     </section>
+    
   );
 }
 
