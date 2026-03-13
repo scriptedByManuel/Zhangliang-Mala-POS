@@ -48,9 +48,9 @@ function MenuTableLoader() {
           {/* Actions */}
           <TableCell>
             <div className="flex items-right gap-1">
-              <Skeleton className="h-6 w-6 rounded-sm" />
-              <Skeleton className="h-6 w-6 rounded-sm" />
-              <Skeleton className="h-6 w-6 rounded-sm" />
+              <Skeleton className="h-6 w-6" />
+              <Skeleton className="h-6 w-6" />
+              <Skeleton className="h-6 w-6" />
             </div>
           </TableCell>
         </TableRow>

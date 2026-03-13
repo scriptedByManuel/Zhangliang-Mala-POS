@@ -27,20 +27,20 @@ function MenuCreateFormLoader() {
       {/* Checkbox Section */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
-          <Skeleton className="h-4 w-4 rounded-sm" />
+          <Skeleton className="h-4 w-4" />
           <Skeleton className="h-3 w-56" />
         </div>
 
         <div className="flex items-center gap-3">
-          <Skeleton className="h-4 w-4 rounded-sm" />
+          <Skeleton className="h-4 w-4" />
           <Skeleton className="h-3 w-48" />
         </div>
       </div>
 
       {/* Buttons */}
       <div className="flex gap-3">
-        <Skeleton className="h-9 w-12 rounded-md" />
-        <Skeleton className="h-9 w-24 rounded-md" />
+        <Skeleton className="h-9 w-12" />
+        <Skeleton className="h-9 w-24" />
       </div>
     </div>
   );
