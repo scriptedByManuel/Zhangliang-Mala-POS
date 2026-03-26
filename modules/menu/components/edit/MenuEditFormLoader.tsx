@@ -5,6 +5,8 @@ function MenuEditFormLoader() {
     <div className="w-1/2 space-y-6">
       {/* Grid Section */}
       <div className="grid grid-cols-1 gap-5">
+        {/* Image */}
+        <Skeleton className="size-20 col-span-full" />
         {/* Menu Title */}
         <div className="flex flex-col gap-2">
           <Skeleton className="h-3 w-24" />

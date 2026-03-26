@@ -5,6 +5,8 @@ function CustomerEditFormLoader() {
     <div className="w-1/2 space-y-6">
       {/* Grid Section */}
       <div className="grid grid-cols-2 gap-5">
+        {/* Image */}
+        <Skeleton className="size-20 col-span-full" />
         {/* Customer Name */}
         <div className="flex flex-col gap-2">
           <Skeleton className="h-3 w-24" />

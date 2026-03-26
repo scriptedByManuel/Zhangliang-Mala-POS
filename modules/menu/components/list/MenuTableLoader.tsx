@@ -5,49 +5,51 @@ import { useSearchParams } from "next/navigation";
 function MenuTableLoader() {
   const searchParams = useSearchParams();
 
+  const limit = searchParams.has("limit")
+    ? parseInt(searchParams.get("limit")!)
+    : 5;
+
   return (
     <>
-      {Array.from({
-        length: searchParams.has("limit")
-          ? parseInt(searchParams.get("limit")!)
-          : 5,
-      }).map((_, index) => (
-        <TableRow key={index} className="align-top">
-          {/* ID */}
-          <TableCell>
-            <Skeleton className="h-3 w-6" />
+      {Array.from({ length: limit }).map((_, index) => (
+        <TableRow key={index} className="border-b">
+          {/* # */}
+          <TableCell className="p-2">
+            <Skeleton className="h-4 w-6" />
           </TableCell>
 
-          {/* Image + Name */}
-          <TableCell className="flex gap-1 items-start">
-            <Skeleton className="h-6 w-6 mb-1" />
-            <Skeleton className="h-3 w-40" />
+          {/* Name */}
+          <TableCell className="p-2">
+            <div className="flex items-start gap-2">
+              <Skeleton className="w-10 h-10 " />
+              <Skeleton className="h-4 w-28 mt-1" />
+            </div>
           </TableCell>
 
-          {/* Phone */}
-          <TableCell>
-            <Skeleton className="h-3 w-28" />
+          {/* Category */}
+          <TableCell className="p-2">
+            <Skeleton className="h-4 w-20" />
           </TableCell>
 
-          {/* Gender */}
-          <TableCell>
-            <Skeleton className="h-3 w-16" />
+          {/* Price */}
+          <TableCell className="p-2 text-right">
+            <Skeleton className="h-4 w-12 ml-auto" />
           </TableCell>
 
-          {/* Address */}
-          <TableCell className="w-52">
-            <Skeleton className="h-3 w-full" />
+          {/* Unit */}
+          <TableCell className="p-2 text-center">
+            <Skeleton className="h-4 w-12 mx-auto" />
           </TableCell>
 
-          {/* Created By + Date */}
-          <TableCell>
+          {/* Created */}
+          <TableCell className="p-2 w-20">
             <Skeleton className="h-3 w-12 mb-1" />
             <Skeleton className="h-2 w-16" />
           </TableCell>
 
           {/* Actions */}
-          <TableCell>
-            <div className="flex items-right gap-1">
+          <TableCell className="p-2 w-20">
+            <div className="flex justify-end gap-1">
               <Skeleton className="h-6 w-6" />
               <Skeleton className="h-6 w-6" />
               <Skeleton className="h-6 w-6" />

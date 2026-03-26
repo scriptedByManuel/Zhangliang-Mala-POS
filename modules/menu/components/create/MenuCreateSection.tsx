@@ -1,11 +1,11 @@
 "use client";
 
-import useInputCategoryList from "../../hooks/useInputCategoryList";
+import useCategoryList from "@/modules/category/hooks/useCategoryList";
 import MenuCreateForm from "./MenuCreateForm";
 import MenuCreateFormLoader from "./MenuCreateFormLoader";
 
 function MenuCreateSection() {
-  const { data, isLoading } = useInputCategoryList();
+  const { data, isLoading } = useCategoryList();
   return (
     <section className="container mx-auto py-3  flex flex-col gap-4">
       <div className="">

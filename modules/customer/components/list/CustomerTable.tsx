@@ -15,6 +15,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CustomerPagination from "../../../../components/TablePagination";
 import TableSearchInput from "@/components/TableSearchInput";
+import TableSortableColumn from "@/components/TableSortableColumn";
+import FilterByGender from "./FilterByGender";
+import TableEmptyRow from "@/components/TableEmptyRow";
 
 function CustomerTable() {
   const { data, error, isLoading } = useCustomerList();
@@ -23,7 +26,8 @@ function CustomerTable() {
     <>
       <div className=" flex justify-between gap-1">
         <TableSearchInput placeholder="Search customers ..." />
-        <div>
+         <div className=" flex justify-end gap-2">
+          <FilterByGender />
           <Link href={"/dashboard/customers/create"}>
             <Button size={"sm"}>Create Customer</Button>
           </Link>
@@ -32,8 +36,24 @@ function CustomerTable() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>#</TableHead>
-            <TableHead>Customer</TableHead>
+            <TableHead>
+              <TableSortableColumn
+                align="left"
+                iconPosition="right"
+                columnName="id"
+              >
+                #
+              </TableSortableColumn>
+            </TableHead>
+            <TableHead>
+              <TableSortableColumn
+                align="left"
+                iconPosition="right"
+                columnName="name"
+              >
+                Customer
+              </TableSortableColumn>
+            </TableHead>
             <TableHead>Phone</TableHead>
             <TableHead>Gender</TableHead>
             <TableHead>Address</TableHead>
@@ -42,12 +62,15 @@ function CustomerTable() {
           </TableRow>
         </TableHeader>
         <TableBody className="[&_td]:align-top">
-          {isLoading ? (
+         {isLoading ? (
             <CustomerTableLoader />
           ) : (
-            data.data.map((el: CustomerDetailType) => (
-              <CustomerTableRow key={el.id} customer={el} />
-            ))
+            <>
+              <TableEmptyRow colSpan={7}>There is no Customer Data</TableEmptyRow>
+              {data.data.map((el: CustomerDetailType) => (
+                <CustomerTableRow key={el.id} customer={el} />
+              ))}
+            </>
           )}
         </TableBody>
       </Table>

@@ -8,6 +8,7 @@ import z from "zod";
 
 export const menuCreateFormSchema = z.object({
   title: z.string().min(1, "Title is required"),
+  image: z.string().min(1, "Image is required"),
   category_id: z.coerce.number().min(1, "Category is required"),
   unit: z.string().min(1, "Unit is required"),
   price: z.coerce
@@ -26,6 +27,7 @@ function useMenuCreate() {
     defaultValues: {
       title: "",
       unit: "",
+      image: "",
       category_id: 0,
       price: 0,
       stay_here: false,
@@ -38,6 +40,7 @@ function useMenuCreate() {
   const onSubmit = async (formData: MenuCreateFormValues) => {
     try {
       const { stay_here, confirm, ...payload } = formData;
+      console.log(payload)
       const res = await storeMenu(payload);
       const json = await res.json();
       console.log(json)

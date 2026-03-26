@@ -1,4 +1,5 @@
 "use client";
+import useCategoryList from "@/modules/category/hooks/useCategoryList";
 import useInputCategoryList from "../../hooks/useInputCategoryList";
 import useMenuDetail from "../../hooks/useMenuDetail";
 import MenuEditForm from "./MenuEditForm";
@@ -6,7 +7,7 @@ import MenuEditFormLoader from "./MenuEditFormLoader";
 
 function MenuEditSection() {
   const { data: menuData, error: menuError, isLoading: isMenuLoading } = useMenuDetail();
-  const { data: categoriesData, error: categoryError, isLoading: isCategoriesLoading } = useInputCategoryList();
+  const { data: categoriesData, error: categoryError, isLoading: isCategoriesLoading } = useCategoryList();
 
   // Loading State
   const isLoading = isMenuLoading || isCategoriesLoading;

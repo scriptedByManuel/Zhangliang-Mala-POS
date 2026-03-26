@@ -12,25 +12,31 @@ type Props = {
 };
 
 function MenuTableRow({
-  menu: { id, title, category, price, unit, image, created_at, updated_at, user },
+  menu: {
+    id,
+    title,
+    category,
+    price,
+    unit,
+    image,
+    created_at,
+    updated_at,
+    user,
+  },
 }: Props) {
   return (
     <TableRow>
       <TableCell>{id}</TableCell>
       <TableCell>
         <div className="flex items-start gap-1">
-          <img
-            src={image}
-            alt={title}
-            className=" w-10 h-10 object-cover rounded-md"
-          />
+          <img src={image} alt={title} className=" w-10 h-10 object-cover " />
           <p className=" capitalize">{title}</p>
         </div>
       </TableCell>
       <TableCell>{category.title}</TableCell>
-      <TableCell className=" capitalize">{price}</TableCell>
-      <TableCell className=" capitalize">{unit}</TableCell>
-      <TableCell>
+      <TableCell className=" capitalize text-end">{price}</TableCell>
+      <TableCell className=" capitalize text-center">{unit}</TableCell>
+      <TableCell className="w-20">
         <p>{user.name}</p>
         <p
           className=" text-muted-foreground flex items-center gap-1"
@@ -39,10 +45,10 @@ function MenuTableRow({
           {dayjs(updated_at).format("D MMM YYYY")}
         </p>
       </TableCell>
-      <TableCell>
+      <TableCell className="w-20">
         <ButtonGroup className=" flex justify-end w-full">
           <MenuDeleteBtn id={id} />
-          <Link href={`/dashboard/menu/${id}/edit`}>
+          <Link href={`/dashboard/menu/${id}/edit?limit=100`}>
             <Button variant={"secondary"} size={"xs"}>
               <Pencil className=" size-2" />
             </Button>

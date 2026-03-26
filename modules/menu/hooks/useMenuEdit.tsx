@@ -9,6 +9,7 @@ import z from "zod";
 
 export const menuEditFormSchema = z.object({
   title: z.string().min(1, "Title is required"),
+  image: z.string().min(1, "Image is required"),
   category_id: z.coerce.number().min(1, "Category is required"),
   unit: z.string().min(1, "Unit is required"),
   price: z.coerce
