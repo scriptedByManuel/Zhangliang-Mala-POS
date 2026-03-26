@@ -128,13 +128,13 @@ export default function RegisterForm() {
                   <FieldLabel htmlFor="password-confirmation">
                     Confirm Password
                   </FieldLabel>
-                  <Input
+                   <PasswordInput
                     {...field}
-                    id="password-confirmation"
-                    type="password"
-                    autoComplete="current-password"
-                    placeholder="Password"
+                    ref={field.ref}
+                    showEyeIcon={true}
                     aria-invalid={fieldState.invalid}
+                    id="password-confirmation"
+                    placeholder="••••••••"
                   />
                   {fieldState.error && (
                     <FieldError errors={[fieldState.error]} />
