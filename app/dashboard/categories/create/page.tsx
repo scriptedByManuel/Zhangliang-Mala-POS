@@ -7,7 +7,7 @@ const page = () => {
         <Header links={[
           {
             title: "Category",
-            href: "/dashboard/category",
+            href: "/dashboard/categories",
           },
         ]}  currentPage="Create Category" />
         <CreateNewCategorySection />

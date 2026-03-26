@@ -39,18 +39,20 @@ function CustomerTableLoader() {
             <Skeleton className="h-3 w-full" />
           </TableCell>
 
-          {/* Created By + Date */}
-          <TableCell>
-            <Skeleton className="h-3 w-12 mb-1" />
-            <Skeleton className="h-2 w-16" />
+          {/* Created */}
+          <TableCell className="p-2 w-25 text-xs">
+            <div className="flex flex-col gap-1">
+              <Skeleton className="h-3 w-16" />
+              <Skeleton className="h-2 w-24" />
+            </div>
           </TableCell>
 
           {/* Actions */}
-          <TableCell>
-            <div className="flex items-right justify-end gap-1">
-              <Skeleton className="h-6 w-6 rounded-sm" />
-              <Skeleton className="h-6 w-6 rounded-sm" />
-              <Skeleton className="h-6 w-6 rounded-sm" />
+          <TableCell className="p-2 w-20">
+            <div className="flex justify-end gap-1">
+              <Skeleton className="h-6 w-6" />
+              <Skeleton className="h-6 w-6" />
+              <Skeleton className="h-6 w-6" />
             </div>
           </TableCell>
         </TableRow>

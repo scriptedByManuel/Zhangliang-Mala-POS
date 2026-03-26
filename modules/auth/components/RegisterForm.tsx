@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/field";
 import { Controller } from "react-hook-form";
 import { defaultLoginRoutePath } from "@/lib/constants";
+import PasswordInput from "@/components/PasswordInput";
 
 export default function RegisterForm() {
   const {
@@ -102,14 +103,15 @@ export default function RegisterForm() {
                 <Field className="grid gap-2" data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="password">Password</FieldLabel>
 
-                  <Input
+                  <PasswordInput
                     {...field}
-                    id="password"
-                    type="password"
-                    autoComplete="current-password"
-                    placeholder="Password"
+                    ref={field.ref}
+                    showEyeIcon={true}
                     aria-invalid={fieldState.invalid}
+                    id="password"
+                    placeholder="••••••••"
                   />
+
                   {fieldState.error && (
                     <FieldError errors={[fieldState.error]} />
                   )}

@@ -12,8 +12,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { Controller } from "react-hook-form";
 import useChangePassword from "../../hooks/useChangePassword";
 import { useRouter } from "next/navigation";
-
-
+import PasswordInput from "@/components/PasswordInput";
 
 function ChangePasswordSection() {
   const { control, handleSubmit, isSubmitting, onSubmit } = useChangePassword();
@@ -29,7 +28,7 @@ function ChangePasswordSection() {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FieldGroup className="grid gap-4">
+        <FieldGroup className="grid gap-4 max-w-sm">
           <Controller
             name="old_password"
             control={control}
@@ -38,14 +37,16 @@ function ChangePasswordSection() {
                 <FieldLabel htmlFor="current-password">
                   Current Password
                 </FieldLabel>
-                <Input
+
+                <PasswordInput
                   {...field}
+                  ref={field.ref}
+                  showEyeIcon={true}
                   aria-invalid={fieldState.invalid}
                   id="current-password"
-                  type="password"
-                  placeholder=""
-                  className="max-w-sm"
+                  placeholder="••••••••"
                 />
+
                 {fieldState.error && <FieldError errors={[fieldState.error]} />}
               </Field>
             )}
@@ -59,13 +60,15 @@ function ChangePasswordSection() {
               <Field className="grid gap-2" data-invalid={fieldState.invalid}>
                 <FieldLabel htmlFor="new-password">New Password</FieldLabel>
 
-                <Input
+                <PasswordInput
                   {...field}
-                  id="new-password"
-                  type="password"
-                  className="max-w-sm"
+                  ref={field.ref}
+                  showEyeIcon={true}
                   aria-invalid={fieldState.invalid}
+                  id="new-password"
+                  placeholder="••••••••"
                 />
+
                 {fieldState.error && <FieldError errors={[fieldState.error]} />}
               </Field>
             )}
@@ -80,13 +83,15 @@ function ChangePasswordSection() {
                   Confirm New Password
                 </FieldLabel>
 
-                <Input
+                <PasswordInput
                   {...field}
-                  id="confirm-new-password"
-                  type="password"
-                  className="max-w-sm"
+                  ref={field.ref}
+                  showEyeIcon={true}
                   aria-invalid={fieldState.invalid}
+                  id="confirm-new-password"
+                  placeholder="••••••••"
                 />
+
                 {fieldState.error && <FieldError errors={[fieldState.error]} />}
               </Field>
             )}

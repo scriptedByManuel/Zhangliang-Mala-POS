@@ -34,7 +34,7 @@ function CustomerTableRow({
       <TableCell>{phone}</TableCell>
       <TableCell className=" capitalize">{gender}</TableCell>
       <TableCell className=" w-52">{address}</TableCell>
-      <TableCell>
+      <TableCell className="w-25">
         <p>{user.name}</p>
         <p
           className=" text-muted-foreground flex items-center gap-1"
@@ -43,7 +43,7 @@ function CustomerTableRow({
           {dayjs(updated_at).format("D MMM YYYY")}
         </p>
       </TableCell>
-      <TableCell>
+      <TableCell className="w-20">
         <ButtonGroup className=" flex justify-end w-full">
           <CustomerDeleteBtn id={id} />
           <Link href={`/dashboard/customers/${id}/edit`}>

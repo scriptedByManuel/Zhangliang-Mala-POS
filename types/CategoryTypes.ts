@@ -14,4 +14,10 @@ export const categoryFormSchema = z.object({
 
 export type CategoryFormType = z.infer<typeof categoryFormSchema>;
 
-
+export type CategoryDetailType = {
+  id: number;
+  user: User;
+  title: string;
+  created_at: string;
+  updated_at: string;
+};

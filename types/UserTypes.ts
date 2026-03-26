@@ -1,5 +1,5 @@
-import { changePasswordFormSchema } from "@/modules/profile-information/components/change-password/ChangePasswordSection";
-import { profileEditFormSchema } from "@/modules/profile-information/components/EditProfileSection";
+import { profileEditFormSchema } from "@/modules/profile-information/components/edit-profile/EditProfileSection";
+import { changePasswordFormSchema } from "@/modules/profile-information/hooks/useChangePassword";
 import z from "zod";
 
 export type User = {
