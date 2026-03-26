@@ -23,6 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CategoryDetailType } from "@/types/CategoryTypes";
+import PhotoInput from "@/components/PhotoInput";
 
 type Props = {
   data: MenuDetailType;
@@ -41,6 +42,23 @@ const MenuEditForm = ({ data, categories }: Props) => {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className=" w-1/2 space-y-6">
         <FieldGroup className=" grid grid-cols-1">
+          <Controller
+            name="image"
+            control={control}
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <FieldLabel>Menu Image</FieldLabel>
+                <PhotoInput
+                  value={field.value}
+                  onChange={field.onChange}
+                  error={fieldState.error}
+                />
+
+                {fieldState.error && <FieldError errors={[fieldState.error]} />}
+              </Field>
+            )}
+          />
+          
           <Controller
             name="title"
             control={control}

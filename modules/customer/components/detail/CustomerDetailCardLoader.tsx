@@ -2,13 +2,15 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 function CustomerDetailCardLoader() {
   return (
-    <div className="w-1/2 grid grid-cols-2 gap-6 border border-muted p-4 rounded-lg">
+    <div className="w-1/2 grid grid-cols-2 gap-6 border border-muted p-4">
+      {/* Image */}
+      <Skeleton className="size-20 col-span-full" />
       {/* Name */}
       <div>
         <Skeleton className="h-3 w-16 mb-2" />
         <div className="flex items-center gap-2">
           <Skeleton className="h-4 w-24" />
-          <Skeleton className="h-5 w-14 rounded-sm" />
+          <Skeleton className="h-5 w-14 " />
         </div>
       </div>
 
@@ -33,7 +35,7 @@ function CustomerDetailCardLoader() {
       {/* Address */}
       <div className="col-span-full">
         <Skeleton className="h-3 w-20 mb-2" />
-        <Skeleton className="h-4 w-full" />
+        <Skeleton className="h-4 w-40" />
       </div>
 
       {/* Created At */}

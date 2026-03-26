@@ -27,7 +27,7 @@ function MenuDetailSection() {
             All Menu
           </Button>
         </Link>
-        <Link href={`/dashboard/menu/${id}/edit`}>
+        <Link href={`/dashboard/menu/${id}/edit?limit=100`}>
           <Button size={"sm"}>Edit Menu</Button>
         </Link>
       </div>

@@ -16,6 +16,9 @@ import TableSearchInput from "@/components/TableSearchInput";
 import MenuTableRow from "./MenuTableRow";
 import MenuTableLoader from "./MenuTableLoader";
 import { MenuDetailType } from "@/types/MenuTypes";
+import TableSortableColumn from "@/components/TableSortableColumn";
+import FilterByCategory from "./FilterByCategory";
+import FilterByUnit from "./FilterByUnit";
 
 function MenuTable() {
   const { data, error, isLoading } = useMenuList();
@@ -24,8 +27,10 @@ function MenuTable() {
     <>
       <div className=" flex justify-between gap-1">
         <TableSearchInput placeholder="Search menu ..." />
-        <div>
-          <Link href={"/dashboard/menu/create"}>
+        <div className="flex justify-end gap-2">
+          <FilterByCategory />
+          <FilterByUnit />
+          <Link href={"/dashboard/menu/create?limit=100"}>
             <Button size={"sm"}>Create Menu</Button>
           </Link>
         </div>
@@ -33,11 +38,27 @@ function MenuTable() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>#</TableHead>
+            <TableHead>
+               <TableSortableColumn
+                align="left"
+                iconPosition="right"
+                columnName="id"
+              >
+                #
+              </TableSortableColumn>
+            </TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Category</TableHead>
-            <TableHead>Price</TableHead>
-            <TableHead>Unit</TableHead>
+            <TableHead>
+              <TableSortableColumn
+                align="right"
+                iconPosition="right"
+                columnName="price"
+              >
+                Price
+              </TableSortableColumn>
+            </TableHead>
+            <TableHead className="text-center">Unit</TableHead>
             <TableHead>Created</TableHead>
             <TableHead className=" text-right">Actions</TableHead>
           </TableRow>

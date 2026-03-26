@@ -20,6 +20,7 @@ import { Controller } from "react-hook-form";
 import { useLogin } from "../hooks/useLogin";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Spinner } from "@/components/ui/spinner";
+import PasswordInput from "@/components/PasswordInput";
 
 const LoginForm = () => {
   const {
@@ -40,7 +41,7 @@ const LoginForm = () => {
           </CardDescription>
         </div>
         <div>
-            <img src="/favicon.svg" alt="icon" width={30} />
+          <img src="/favicon.svg" alt="icon" width={30} />
         </div>
       </CardHeader>
 
@@ -83,12 +84,13 @@ const LoginForm = () => {
                       Forgot password?
                     </Link>
                   </div>
-                  <Input
+                  <PasswordInput
                     {...field}
-                    id="password"
-                    type="password"
-                    placeholder="Password"
+                    ref={field.ref}
+                    showEyeIcon={true}
                     aria-invalid={fieldState.invalid}
+                    id="password"
+                    placeholder="••••••••"
                   />
                   {fieldState.error && (
                     <FieldError errors={[fieldState.error]} />

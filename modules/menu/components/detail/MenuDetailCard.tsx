@@ -1,26 +1,29 @@
 import { MenuDetailType } from "@/types/MenuTypes";
+import Image from "next/image";
 
 type Props = {
   data: MenuDetailType;
 };
 
 function MenuDetailCard({
-  data: {
-    title,
-    category,
-    unit,
-    price,
-    created_at,
-    updated_at,
-  },
+  data: { title, category, unit, price, image, created_at, updated_at },
 }: Props) {
   return (
-    <div className=" w-1/2 grid grid-cols-1 gap-6 border border-muted p-4">
+    <div className=" w-1/2 grid grid-cols-1 gap-6 p-4 border border-muted">
+      <Image
+        unoptimized
+        width={80}
+        height={80}
+        className=" size-20 "
+        src={
+          image ||
+          "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+        }
+        alt="profile image"
+      />
       <div>
         <p className=" text-xs text-muted-foreground mb-1">Name</p>
-        <p className=" text-sm text-foreground">
-          {title}
-        </p>
+        <p className=" text-sm text-foreground">{title}</p>
       </div>
       <div>
         <p className=" text-xs text-muted-foreground mb-1">Category</p>

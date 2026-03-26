@@ -3,6 +3,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 function MenuDetailCardLoader() {
   return (
     <div className="w-1/2 grid grid-cols-1 gap-6 border border-muted p-4">
+      {/* Image */}
+      <Skeleton className="size-20 col-span-full" />
+
       {/* Title */}
       <div>
         <Skeleton className="h-2 w-16 mb-2" />

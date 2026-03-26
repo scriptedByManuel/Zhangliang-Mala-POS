@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 
 import { CategoryDetailType } from "@/types/CategoryTypes";
+import PhotoInput from "@/components/PhotoInput";
 
 type Props = {
   categories: CategoryDetailType[];
@@ -36,11 +37,27 @@ const MenuCreateForm = ({ categories }: Props) => {
     reset,
   } = useMenuCreate();
 
-
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className=" w-1/2 space-y-6">
         <FieldGroup className=" grid grid-cols-1">
+          <Controller
+            name="image"
+            control={control}
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <FieldLabel>Menu Image</FieldLabel>
+                <PhotoInput
+                  value={field.value}
+                  onChange={field.onChange}
+                  error={fieldState.error}
+                />
+
+                {fieldState.error && <FieldError errors={[fieldState.error]} />}
+              </Field>
+            )}
+          />
+
           <Controller
             name="title"
             control={control}
@@ -69,7 +86,12 @@ const MenuCreateForm = ({ categories }: Props) => {
                 >
                   <SelectTrigger className="px-2 h-6 w-16 text-xs">
                     <SelectValue placeholder={"Select"}>
-                      {field.value ? categories.find((c: CategoryDetailType) => c.id.toString() === field.value.toString())?.title : "Select"}
+                      {field.value
+                        ? categories.find(
+                            (c: CategoryDetailType) =>
+                              c.id.toString() === field.value.toString(),
+                          )?.title
+                        : "Select"}
                     </SelectValue>
                   </SelectTrigger>
                   <SelectContent>
@@ -92,7 +114,7 @@ const MenuCreateForm = ({ categories }: Props) => {
             )}
           />
 
-           <Controller
+          <Controller
             name="unit"
             control={control}
             render={({ field, fieldState }) => (

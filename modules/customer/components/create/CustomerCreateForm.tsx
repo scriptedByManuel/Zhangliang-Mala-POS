@@ -15,6 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { Checkbox } from "@/components/ui/checkbox";
+import PhotoInput from "@/components/PhotoInput";
 
 function CustomerCreateFrom() {
   const {
@@ -28,6 +29,24 @@ function CustomerCreateFrom() {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className=" w-1/2 space-y-6">
         <FieldGroup className=" grid grid-cols-2">
+          <div className="col-span-2">
+            <Controller
+            name="image"
+            control={control}
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <FieldLabel>Menu Image</FieldLabel>
+                <PhotoInput
+                  value={field.value}
+                  onChange={field.onChange}
+                  error={fieldState.error}
+                />
+
+                {fieldState.error && <FieldError errors={[fieldState.error]} />}
+              </Field>
+            )}
+          />
+          </div>
           <Controller
             name="name"
             control={control}

@@ -9,6 +9,7 @@ import z from "zod";
 
 export const customerCreateFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
+  image: z.string().min(1, "Image is required"),
   date_of_birth: z
     .string()
     .refine((date) => !isNaN(Date.parse(date)), "Invalid date"),
